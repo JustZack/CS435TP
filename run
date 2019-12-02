@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#run the jar
+$HADOOP_HOME/bin/hadoop jar TP.jar Joiner

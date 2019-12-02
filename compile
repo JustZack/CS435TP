@@ -1,0 +1,4 @@
+#!/bin/bash
+$HADOOP_HOME/bin/hadoop com.sun.tools.javac.Main Joiner.java  -Xdiags:verbose #-Xlint
+jar cf TP.jar *.class
+
