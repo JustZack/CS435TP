@@ -122,12 +122,18 @@ model = language_model(2)
 print("Training model")
 model.train('bigram-frequency')
 
-model.printTest('this is good')
-model.printTest('Literally just 19 very large cats')
-model.printTest('You wont belive this miracle cream')
-model.printTest('this new fad has scientists worried')
-model.printTest("14 strangely satisfying videos of melting cheese")
-model.printTest( "Is Justin Trudeau the anti-Trump?")
-model.printTest("The difference between Donald Trump and Justin Trudeau in two pictures")
-model.printTest("15 signs you are, without a doubt, a Target mom")
-model.printTest("The rape came to light when the child whispered in the judge's ear about the rape")
+def runBigTest(folder) :
+    text = open(folder + "/part-r-00000", 'r').readlines()
+    for line in text :
+        model.printTest(line.strip());
+
+runBigTest("clickbait-headlines")
+#model.printTest('this is good')
+#model.printTest('Literally just 19 very large cats')
+#model.printTest('You wont belive this miracle cream')
+#model.printTest('this new fad has scientists worried')
+#model.printTest("14 strangely satisfying videos of melting cheese")
+#model.printTest( "Is Justin Trudeau the anti-Trump?")
+#model.printTest("The difference between Donald Trump and Justin Trudeau in two pictures")
+#model.printTest("15 signs you are, without a doubt, a Target mom")
+#model.printTest("The rape came to light when the child whispered in the judge's ear about the rape")
