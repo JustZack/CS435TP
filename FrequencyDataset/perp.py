@@ -127,22 +127,21 @@ class language_model:
             else : return 0
             # return self.bigram_data.setdefault(context, 0)
         return 0
-
-def getPerplexity(model, headline) :
-    print(str(model.test(headline)) + " : " + headline)
+    def printPerplexity(self, text) : 
+        print(str(self.test(text)) + " : " + text)
 
 gram = 2
-model = language_model(gram)
+model = language_model(2)
 
 print("Training model")
 model.train('bigram-frequency')
 
-getPerplexity(model, 'this is good')
-getPerplexity(model, 'Literally just 19 very large cats')
-getPerplexity(model, 'You wont belive this miracle cream')
-getPerplexity(model, 'this new fad has scientists worried')
-getPerplexity(model, "14 strangely satisfying videos of melting cheese")
-getPerplexity(model, "Is Justin Trudeau the anti-Trump?")
-getPerplexity(model, "The difference between Donald Trump and Justin Trudeau in two pictures")
-getPerplexity(model, "15 signs you are, without a doubt, a Target mom")
-getPerplexity(model, "The rape came to light when the child whispered in the judge's ear about the rape")
+model.printPerplexity('this is good')
+model.printPerplexity('Literally just 19 very large cats')
+model.printPerplexity('You wont belive this miracle cream')
+model.printPerplexity('this new fad has scientists worried')
+model.printPerplexity("14 strangely satisfying videos of melting cheese")
+model.printPerplexity( "Is Justin Trudeau the anti-Trump?")
+model.printPerplexity("The difference between Donald Trump and Justin Trudeau in two pictures")
+model.printPerplexity("15 signs you are, without a doubt, a Target mom")
+model.printPerplexity("The rape came to light when the child whispered in the judge's ear about the rape")
