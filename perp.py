@@ -127,7 +127,13 @@ def runBigTest(folder) :
     for line in text :
         model.printTest(line.strip());
 
-runBigTest("clickbait-headlines")
+def runTest(fle) :
+    text = open(fle, 'r').readlines()
+    for line in text :
+        model.printTest(line.split(',')[1].strip());
+
+#runBigTest("clickbait-headlines")
+runTest("abc-news.csv")
 #model.printTest('this is good')
 #model.printTest('Literally just 19 very large cats')
 #model.printTest('You wont belive this miracle cream')
