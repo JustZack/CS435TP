@@ -42,24 +42,10 @@ class language_model:
         Parameters:
         file_name is a file that contains the training set for the model
         """
-        #Dont need this
-        #self.text = self.getText(file_name)
         if self.ngram > 1 :
-            # Change this:
-            # Need to read in each part-r-0000x for the bigram frequencys
             self.bigram_data = self.readModel(folder)
-            #for i in range(len(self.text) - 1) :
-            #    self.bigram_data.append(self.text[i] +' '+ self.text[i+1])
-            #self.bigram_data = Counter(self.bigram_data) 
 
-        # Change this:
         # Go through bigram data, and compute unigram (word) frequency
-        #
-        # word1 word2 freq1
-        # word3 word1 freq2
-        # 
-        # word1: fre1 + fre2
-        # ...
         self.frequency_data = self.asUnigramFrequency(self.bigram_data)
         
         self.V = len(self.frequency_data)
@@ -127,7 +113,7 @@ class language_model:
             else : return 0
             # return self.bigram_data.setdefault(context, 0)
         return 0
-    def printPerplexity(self, text) : 
+    def printTest(self, text) : 
         print(str(self.test(text)) + " : " + text)
 
 gram = 2
@@ -136,12 +122,12 @@ model = language_model(2)
 print("Training model")
 model.train('bigram-frequency')
 
-model.printPerplexity('this is good')
-model.printPerplexity('Literally just 19 very large cats')
-model.printPerplexity('You wont belive this miracle cream')
-model.printPerplexity('this new fad has scientists worried')
-model.printPerplexity("14 strangely satisfying videos of melting cheese")
-model.printPerplexity( "Is Justin Trudeau the anti-Trump?")
-model.printPerplexity("The difference between Donald Trump and Justin Trudeau in two pictures")
-model.printPerplexity("15 signs you are, without a doubt, a Target mom")
-model.printPerplexity("The rape came to light when the child whispered in the judge's ear about the rape")
+model.printTest('this is good')
+model.printTest('Literally just 19 very large cats')
+model.printTest('You wont belive this miracle cream')
+model.printTest('this new fad has scientists worried')
+model.printTest("14 strangely satisfying videos of melting cheese")
+model.printTest( "Is Justin Trudeau the anti-Trump?")
+model.printTest("The difference between Donald Trump and Justin Trudeau in two pictures")
+model.printTest("15 signs you are, without a doubt, a Target mom")
+model.printTest("The rape came to light when the child whispered in the judge's ear about the rape")
