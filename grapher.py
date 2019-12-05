@@ -18,7 +18,7 @@ non_clickbait_perps = [float(l.split(':')[0].strip()) for l in open('sorted_abcn
 clickbait_perps = [float(l.split(':')[0].strip()) for l in open('sorted_clickbait_output', 'r').readlines()]
 # too wide     closer    good     too far   
 # 200,000 --> 50,000 --> 12,500 --> 6000 --> 20,000 --> 30,000
-maximum = 50000 # Highest actual perplexity was 1137492.336529789, but that squishes the data too much
+maximum = 75000 # Highest actual perplexity was 1137492.336529789, but that squishes the data too much
 num_bins = 25
 nc_bins = get_bins(num_bins, maximum, non_clickbait_perps)
 c_bins = get_bins(num_bins, maximum, clickbait_perps)
