@@ -9,7 +9,7 @@ def get_bins(num_bins, maximum, data) :
     return bins
 
 non_clickbait_perps = [float(l.split(':')[0].strip()) for l in open('sorted_abcnews_output', 'r').readlines()]
-clickbait_perps = [float(l.split(':')[0].strip()) for l in open('sorted_abcnews_output', 'r').readlines()]
+clickbait_perps = [float(l.split(':')[0].strip()) for l in open('sorted_clickbait_output', 'r').readlines()]
 
 maximum = 200000 # Highest actual perplexity was 1137492.336529789, but that squishes the data too much
 num_bins = 25
