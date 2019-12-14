@@ -2,6 +2,7 @@ import string
 from collections import defaultdict
 from collections import Counter
 import math
+import sys
 
 class language_model:
     def __init__(self, ngram=1) :
@@ -132,14 +133,13 @@ def runTest(fle) :
     for line in text :
         model.printTest(line.split(',')[1].strip());
 
-#runBigTest("clickbait-headlines")
-runTest("abc-news.csv")
-#model.printTest('this is good')
-#model.printTest('Literally just 19 very large cats')
-#model.printTest('You wont belive this miracle cream')
-#model.printTest('this new fad has scientists worried')
-#model.printTest("14 strangely satisfying videos of melting cheese")
-#model.printTest( "Is Justin Trudeau the anti-Trump?")
-#model.printTest("The difference between Donald Trump and Justin Trudeau in two pictures")
-#model.printTest("15 signs you are, without a doubt, a Target mom")
-#model.printTest("The rape came to light when the child whispered in the judge's ear about the rape")
+if (len(sys.argv) > 1):
+        model.printTest(str(sys.argv[1]))
+model.printTest("The Trouble with Theories of Everything")
+model.printTest("Play Forge of Empires now for Free")
+model.printTest("Hot People Are Stressful")
+model.printTest("10 Small Habits That Have A Huge Return On Life")
+model.printTest("7 Shows From The 2010 That You Totally Forgot Existed")
+model.printTest("These Are The Decade-Defining Words Of The 2010s")
+model.printTest("New Science Shows Managing Blood Sugar Isn’t About Counting Calories or Carbs")
+model.printTest("I Faced My Worst Fear: Disney World")
